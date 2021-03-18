@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'startingVideo.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -45,19 +46,7 @@ class HomePage extends StatelessWidget {
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
                     if (index % 4 == 0) {
-                      return Container(
-                        height: 80,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        alignment: Alignment.centerLeft,
-                        color: Colors.black.withOpacity(0.3),
-                        child: Text(
-                          "SubTitle:",
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.grey[50],
-                          ),
-                        ),
-                      );
+                      return VideoPlayerScreen();
                     }
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
