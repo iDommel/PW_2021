@@ -18,33 +18,34 @@ class HomePage extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
-                  expandedHeight: 250,
-                  backgroundColor: Colors.black.withOpacity(0.5),
-                  flexibleSpace: FlexibleSpaceBar(
-                    centerTitle: true,
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          height: size.height * 0.1,
-                          fit: BoxFit.contain,
-                          image: AssetImage("images/iconemugler.png"),
+                expandedHeight: 250,
+                backgroundColor: Colors.black.withOpacity(0.5),
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image(
+                        height: size.height * 0.1,
+                        fit: BoxFit.contain,
+                        image: AssetImage("images/iconemugler.png"),
+                      ),
+                      SizedBox(width: 20),
+                      Text(
+                        "Le Cercle",
+                        style: TextStyle(
+                          color: Colors.grey[50],
+                          fontSize: size.height * 0.05,
                         ),
-                        SizedBox(width: 20),
-                        Text(
-                          "Le Cercle",
-                          style: TextStyle(
-                            color: Colors.grey[50],
-                            fontSize: size.height * 0.05,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    if (index % 4 == 0) {
+                    if (index % 3 == 0) {
                       return Container(
                         height: 80,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -66,9 +67,23 @@ class HomePage extends StatelessWidget {
                           alignment: Alignment.center,
                           color: Colors.transparent,
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Ne faites qu'un avec MUGLER"),
-                              Text("Rejoingnez le Cercle"),
+                              Text(
+                                "Ne faites qu'un avec MUGLER",
+                                style: TextStyle(
+                                  color: Colors.grey[50],
+                                ),
+                              ),
+                              SizedBox(
+                                width: size.width * 0.05,
+                              ),
+                              Text(
+                                "Rejoignez le Cercle",
+                                style: TextStyle(
+                                  color: Colors.grey[50],
+                                ),
+                              ),
                             ],
                           )),
                     );
